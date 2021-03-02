@@ -1,0 +1,22 @@
+{
+  "welcomeFile": "/index.html",
+  "authenticationMethod": "route",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "authenticationType": "xsuaa",
+      "csrfProtection": false,
+      "source": "^/sap/opu/odata/sap/ZUI_RAP_TRAVEL_1234N/(.*)$",
+      "service": "com.sap.cloud.abap",
+      "endpoint": "abap"
+    },
+    {
+      "source": "^(.*)$",
+      "target": "$1",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    }
+  ]
+}
